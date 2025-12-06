@@ -1,60 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anchal Singh • Portfolio</title>
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: url('https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?q=80&w=1200') no-repeat center center fixed;
-            background-size: cover;
+            font-family: "Poppins", sans-serif;
+            background: #0d1117;
+            color: #ffffff;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px 40px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav a {
+            color: #00c8ff;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
             color: white;
         }
 
-        .overlay {
-            background: rgba(0, 0, 0, 0.75);
-            min-height: 100vh;
-            width: 100%;
-            padding-bottom: 50px;
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 150px 20px 80px 20px;
+            background: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&w=1400&q=60') center/cover no-repeat;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .section {
-            max-width: 900px;
-            margin: auto;
-            padding: 60px 20px;
-            text-align: center;
+        .overlay {
+            background: rgba(0, 0, 0, 0.55);
+            padding: 80px 20px;
         }
 
         .profile-pic {
             width: 160px;
             height: 160px;
             border-radius: 50%;
-            border: 3px solid #00c8ff;
-            background-color: #ffffff22;
-            background-size: cover;
+            background: #ffffff22;
             background-position: center;
+            background-size: cover;
             margin: 20px auto;
+            border: 3px solid #00c8ff;
         }
 
         h1 {
             font-size: 48px;
-            margin: 10px 0;
+            font-weight: 700;
+            margin-bottom: 10px;
         }
 
         h2 {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 300;
-            color: #e0e0e0;
+            color: #cccccc;
         }
 
         .links {
             margin-top: 25px;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
         }
 
         .links a {
@@ -63,7 +90,8 @@
             border-radius: 30px;
             color: #00c8ff;
             text-decoration: none;
-            font-size: 16px;
+            margin: 10px;
+            display: inline-block;
             transition: 0.3s;
         }
 
@@ -72,31 +100,70 @@
             color: black;
         }
 
+        .section {
+            max-width: 900px;
+            margin: auto;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
         .card {
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.06);
             border-radius: 16px;
-            padding: 25px;
+            padding: 30px;
             margin: 25px auto;
-            max-width: 700px;
             backdrop-filter: blur(6px);
             border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .card h3 {
             color: #00c8ff;
-            margin-bottom: 12px;
             font-size: 26px;
+            margin-bottom: 15px;
         }
 
-        .card p {
-            color: #dcdcdc;
-            line-height: 1.6;
-            font-size: 17px;
+        /* PROJECT GALLERY */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
         }
 
+        .project-card {
+            padding: 20px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #00c8ff;
+        }
+
+        /* SKILLS */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .skill {
+            padding: 10px 20px;
+            border: 1px solid #00c8ff;
+            border-radius: 30px;
+            font-size: 14px;
+            background: rgba(0, 200, 255, 0.1);
+        }
+
+        /* FOOTER */
         footer {
             text-align: center;
             padding: 25px;
+            margin-top: 40px;
             color: #bbbbbb;
             font-size: 14px;
         }
@@ -104,51 +171,131 @@
 </head>
 
 <body>
-<div class="overlay">
 
-    <!-- INTRO SECTION -->
-    <div class="section">
-        <div class="profile-pic" style="background-image: url('your-photo.jpg');"></div>
+    <!-- NAVBAR -->
+    <nav>
+        <strong style="color:white; font-size:20px;">Anchal Singh</strong>
+        <div>
+            <a href="#about">About</a>
+            <a href="#interests">Interests</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-        <h1>Hey! I'm <span style="color:#00c8ff;">Anchal</span></h1>
-        <h2>Business Analyst • Python Enthusiast • Data Analytics Engineer</h2>
+    <!-- HERO -->
+    <div class="hero">
+        <div class="overlay">
+            <div class="profile-pic" style="background-image: url('your-photo.jpg');"></div>
 
-        <div class="links">
-            <a href="https://www.linkedin.com/in/anchalsinghh" target="_blank">LinkedIn</a>
-            <a href="https://github.com/anchalsingh1708" target="_blank">GitHub</a>
+            <h1>Hey! I'm <span style="color:#00c8ff;">Anchal</span></h1>
+            <h2>Business Analyst • Python Developer • Data Analytics Enthusiast</h2>
+
+            <div class="links">
+                <a href="https://www.linkedin.com/in/anchalsinghh" target="_blank">LinkedIn</a>
+                <a href="https://github.com/anchalsingh1708" target="_blank">GitHub</a>
+            </div>
         </div>
     </div>
 
-    <!-- INTERESTS SECTION -->
-    <div class="section">
+    <!-- ABOUT -->
+    <div class="section" id="about">
+        <div class="card">
+            <h3>👋 About Me</h3>
+            <p>I’m a Business Analyst passionate about Data Analytics, Python automation, and solving problems using data.
+                I love building dashboards, improving processes, and bringing ideas to life through code & insights.</p>
+        </div>
+    </div>
+
+    <!-- INTERESTS -->
+    <div class="section" id="interests">
         <div class="card">
             <h3>✨ My Interests</h3>
             <p>
-                • <strong>Content Creation</strong> — I love making fun and relatable reels about life, data, and work.<br>
-                • <strong>Marketing</strong> — I enjoy exploring branding, storytelling, and digital influence strategies.<br>
-                • <strong>Painting</strong> — Art resets my mind; I create acrylic and abstract pieces.
+                • <strong>Content Creation</strong> — fun reels about life, work & data.<br>
+                • <strong>Marketing</strong> — branding, storytelling & digital reach.<br>
+                • <strong>Painting</strong> — acrylic, abstract, calming art.
             </p>
         </div>
     </div>
 
-    <!-- ACHIEVEMENTS SECTION -->
-    <div class="section">
+    <!-- ACHIEVEMENTS -->
+    <div class="section" id="achievements">
         <div class="card">
-            <h3>🏆 My Achievements</h3>
+            <h3>🏆 Achievements</h3>
             <p>
-                • Successfully automated complex reporting workflows using Python & Excel.<br>
-                • Built high-impact Power BI dashboards used by leadership teams.<br>
-                • Completed a Data Analyst Internship improving data accuracy & reporting efficiency.<br>
-                • Recognized for problem-solving and delivering quick automation solutions at work.
+                • Automated complex reporting using Python & Excel.<br>
+                • Built Power BI dashboards used by leadership.<br>
+                • Improved data processing accuracy during internship.<br>
+                • Recognized for problem-solving & fast delivery at work.
             </p>
         </div>
     </div>
 
-</div>
+    <!-- PROJECTS -->
+    <div class="section" id="projects">
+        <h3 style="color:#00c8ff;">📁 Projects</h3>
 
-<footer>
-    © 2025 Anchal Singh • Designed with ❤️
-</footer>
+        <div class="projects">
+            <div class="project-card">
+                <h4>📌 Capacity Planning Automation</h4>
+                <p>Python automation to consolidate Excel data & prepare datasets for Power BI.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>📌 UID Matching & Modifier Validation Tool</h4>
+                <p>Python-based validation tool for healthcare billing logic.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>📌 Call Center Dashboard</h4>
+                <p>Power BI dashboard with metrics, performance KPIs, and insights.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section" id="skills">
+        <div class="card">
+            <h3>🛠 Skills</h3>
+            <div class="skills-list">
+                <div class="skill">Python</div>
+                <div class="skill">SQL</div>
+                <div class="skill">Power BI</div>
+                <div class="skill">Excel</div>
+                <div class="skill">Data Cleaning</div>
+                <div class="skill">Dashboard Design</div>
+                <div class="skill">Automation</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section" id="contact">
+        <div class="card">
+            <h3>📨 Contact Me</h3>
+            <p>You can reach out to me for collaborations, opportunities, or content ideas.</p>
+
+            <a href="mailto:yourmail@example.com" style="
+                padding: 12px 25px;
+                border: 2px solid #00c8ff;
+                color: #00c8ff;
+                text-decoration: none;
+                border-radius: 30px;
+                font-weight: 500;
+                display: inline-block;
+                margin-top: 10px;">
+                Send Email
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 Anchal Singh • Designed with ❤️
+    </footer>
 
 </body>
+
 </html>
