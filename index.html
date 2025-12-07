@@ -67,7 +67,7 @@
       margin-top: 8px;
     }
 
-    .buttons a {
+    .buttons a, .btn {
       margin: 6px;
       padding: 10px 22px;
       border-radius: 25px;
@@ -79,7 +79,7 @@
       transition: 0.3s;
     }
 
-    .buttons a:hover {
+    .buttons a:hover, .btn:hover {
       background: #0ea5e9;
       color: white;
     }
@@ -121,13 +121,18 @@
 
 <!-- Hero -->
 <div class="hero">
-  <img src="https://raw.githubusercontent.com/anchalsingh1708/anchalsingh1708.github.io/main/profile.jpg" class="profile-img">
+  <!-- ✅ FIXED IMAGE URL -->
+  <img 
+    src="https://github.com/anchalsingh1708/anchalsingh1708.github.io/edit/main/profile.jpg" 
+    class="profile-img"
+    alt="Anchal Singh"
+  >
 
   <h1>Hey! I'm <span>Anchal</span></h1>
-  <p class="subtitle">Business Analyst | Data Analyst | Python Explorer</p>
+  <p class="subtitle">Business Analyst | Cloud Data Engineer | Content Creator</p>
 
   <div class="buttons">
-    <a href="https://www.linkedin.com/in/anchalsingh1708/" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/anchalsinghh/" target="_blank">LinkedIn</a>
     <a href="https://github.com/anchalsingh1708" target="_blank">GitHub</a>
     <a href="https://youtube.com/@anchal_singh17" target="_blank">YouTube</a>
     <a href="https://www.instagram.com/the.outlier.zone/" target="_blank">Instagram</a>
@@ -152,18 +157,27 @@
 <section id="achievements">
   <h2>🏆 Achievements</h2>
   <ul style="line-height: 1.8; padding-left: 20px;">
-    <li>Built automation tools that reduced manual work</li>
-    <li>Created Power BI dashboards used by teams</li>
+    <li>Built automation tools that reduced manual effort</li>
+    <li>Created business-ready Power BI dashboards</li>
     <li>Strong academic background in Data Science</li>
   </ul>
 </section>
 
 <section id="contact">
   <h2>📬 Contact</h2>
-  <p>You can contact me by clicking the button below.</p>
-  <div class="buttons">
-    <a href="mailto:anchalsingh1708@gmail.com?subject=Portfolio%20Contact&body=Hi%20Anchal," target="_blank">Email Me</a>
-  </div>
+  <p>Click a button to contact me directly:</p>
+
+  <!-- Gmail web link -->
+  <a class="btn" 
+     href="https://mail.google.com/mail/?view=cm&fs=1&to=anchalsingh1708@gmail.com">
+     Email via Gmail
+  </a>
+
+  <!-- Normal mail app -->
+  <a class="btn" 
+     href="mailto:anchalsingh1708@gmail.com?subject=Portfolio%20Contact">
+     Email Me
+  </a>
 </section>
 
 <footer>© 2025 Anchal Singh</footer>
