@@ -1,333 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Anchal Singh • Business Analyst</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anchal Singh | Portfolio</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --accent:#00c8ff;
-      --bg:#0d1117;
-      --card: rgba(255,255,255,0.06);
-      --glass: rgba(255,255,255,0.08);
-      --muted:#c9d6df;
-      --maxw:1000px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:"Poppins",system-ui,Arial,sans-serif;
-      background: linear-gradient(180deg,#071020 0%, #0d1117 100%);
-      color:#fff;
-      -webkit-font-smoothing:antialiased;
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400') no-repeat center/cover fixed;
+      color: white;
     }
 
-    /* NAV */
-    nav{
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:14px 28px;
-      background: rgba(0,0,0,0.45);
-      backdrop-filter: blur(6px);
-      border-bottom:1px solid rgba(255,255,255,0.04);
-      z-index:1000;
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
     }
-    nav .brand{font-weight:700; letter-spacing:0.2px}
-    nav .navlinks a{
-      color:var(--accent);
-      text-decoration:none;
-      margin-left:18px;
-      font-weight:600;
-      transition:color .2s;
+
+    nav a {
+      color: #00e1ff;
+      margin-left: 18px;
+      text-decoration: none;
+      font-weight: 500;
     }
-    nav .navlinks a:hover{color:#fff}
 
-    /* HERO */
-    .hero{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:120px 20px 60px;
-      min-height:420px;
-      background-image: linear-gradient(180deg, rgba(8,18,25,0.25), rgba(8,18,25,0.55));
-      border-bottom:1px solid rgba(255,255,255,0.03);
+    nav a:hover {
+      color: white;
     }
-    .hero-inner{max-width:var(--maxw); width:100%}
-    .photo{
-      width:150px;
-      height:150px;
-      border-radius:50%;
-      margin:0 auto 18px;
-      background:#ffffff10;
-      border:3px solid var(--accent);
-      background-size:cover;
-      background-position:center;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+
+    .hero {
+      padding: 150px 20px 100px;
+      text-align: center;
+      background: rgba(0,0,0,0.55);
     }
-    h1{margin:6px 0 6px; font-size:36px}
-    h1 span{color:var(--accent)}
-    .sub{color:var(--muted); margin-bottom:14px; font-weight:400}
 
-    .socials{display:flex; gap:12px; justify-content:center; margin-top:14px}
-    .btn{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding:10px 16px;
-      border-radius:999px;
-      border:1.5px solid var(--accent);
-      color:var(--accent);
-      text-decoration:none;
-      font-weight:600;
-      transition: all .18s;
+    .profile {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin: auto;
+      background-image: url("https://github.com/anchalsingh1708/anchalsingh1708.github.io/blob/main/profile.jpg");
+      background-size: cover;
+      background-position: center;
+      border: 3px solid #00e1ff;
     }
-    .btn:hover{background:var(--accent); color:#081018}
 
-    /* LAYOUT */
-    main{max-width:var(--maxw); margin:40px auto; padding:0 20px 80px}
-    .card{background:var(--card); border-radius:14px; padding:22px; margin:20px 0; border:1px solid rgba(255,255,255,0.06)}
-    .two-col{display:grid; grid-template-columns: 1fr 360px; gap:24px}
-    @media(max-width:880px){ .two-col{grid-template-columns: 1fr} }
+    h1 { font-size: 48px; margin-top: 20px; }
+    h2 { font-weight: 300; font-size: 20px; color: #ccc; }
 
-    h2.section-title{color:var(--accent); margin:8px 0 10px}
-    p.lead{color:var(--muted); line-height:1.6}
+    .socials .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      border: 2px solid #00e1ff;
+      color: #00e1ff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: .3s;
+    }
 
-    /* Projects grid */
-    .projects-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:12px}
-    .project{padding:14px; border-radius:12px; background:var(--glass); border:1px solid rgba(255,255,255,0.04)}
-    .project h4{margin:0 0 8px}
+    .btn:hover {
+      background: #00e1ff;
+      color: black;
+    }
 
-    /* skills */
-    .skill-pill{display:inline-block; padding:8px 12px; border-radius:999px; border:1px solid var(--accent); color:var(--accent); margin:6px 6px 0 0; font-weight:600}
+    .section {
+      max-width: 900px;
+      margin: auto;
+      padding: 80px 20px;
+      text-align: center;
+      background: rgba(0,0,0,0.6);
+    }
 
-    /* contact */
-    .contact-row{display:flex; gap:14px; align-items:center; justify-content:center; margin-top:12px}
-    .icon{display:inline-flex; width:36px; height:36px; align-items:center; justify-content:center; border-radius:8px; background:rgba(0,0,0,0.25); color:var(--accent); border:1px solid rgba(255,255,255,0.04)}
+    .card {
+      background: rgba(255,255,255,0.08);
+      padding: 30px;
+      margin-top: 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
 
-    footer{color:#9aa9b5; text-align:center; padding:26px 10px; margin-top:30px; font-size:14px}
-    .muted{color:#9aa9b5; font-size:14px}
-    ul{padding-left:18px; text-align:left}
-    li{margin-bottom:8px}
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+      background: black;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="brand">Anchal Singh</div>
-    <div class="navlinks">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#contact">Contact</a>
+<nav>
+  <strong style="color:white;font-size:20px">Anchal Singh</strong>
+  <div>
+    <a href="#about">About</a>
+    <a href="#interests">Interests</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="profile"></div>
+  <h1>Hey! I'm <span style="color:#00e1ff;">Anchal</span></h1>
+  <h2>Business Analyst | Data Analyst | Python Enthusiast</h2>
+
+  <div class="socials">
+    <a class="btn" href="https://www.linkedin.com/in/anchalsinghh/" target="_blank">LinkedIn</a>
+    <a class="btn" href="https://github.com/anchalsingh1708" target="_blank">GitHub</a>
+    <a class="btn" href="https://youtube.com/@anchal_singh17" target="_blank">YouTube</a>
+    <a class="btn" href="https://www.instagram.com/the.outlier.zone" target="_blank">Instagram</a>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="card">
+    <h3>About Me</h3>
+    <p>I’m a Business and Data Analyst passionate about transforming data into insights, creating automation tools, and building impactful dashboards using Python, SQL, Excel, and Power BI.</p>
+  </div>
+</section>
+
+<section id="interests" class="section">
+  <div class="card">
+    <h3>My Interests</h3>
+    <p>🎥 Content Creation • 📈 Marketing Strategy • 🎨 Painting & Creative Arts</p>
+  </div>
+</section>
+
+<section id="achievements" class="section">
+  <div class="card">
+    <h3>Achievements</h3>
+    <p>🏆 Built automation systems • 📊 Designed Power BI dashboards • 🚀 Recognized for innovation and efficiency</p>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="card">
+    <h3>Projects</h3>
+    <div class="grid">
+      <div class="card">Capacity Planning Automation (Python + Excel)</div>
+      <div class="card">UID Matching Tool (Python Validation Script)</div>
+      <div class="card">Call Center Dashboard (Power BI)</div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-inner">
-      <!-- Replace 'your-photo.jpg' with your professional photo filename -->
-      <div class="photo" style="background-image:url('your-photo.jpg');"></div>
+<section id="contact" class="section">
+  <div class="card">
+    <h3>Contact Me</h3>
+    <p>Let’s collaborate on projects or content ideas.</p>
+    <a class="btn" href="mailto:anchalsingh1708@gmail.com?subject=Portfolio%20Inquiry">Email Me</a>
+  </div>
+</section>
 
-      <h1>Hey! I'm <span>Anchal</span> 👋</h1>
-      <div class="sub">Business Analyst • Data Analyst • Power BI | Python | SQL</div>
-
-      <!-- Top social buttons (Hero) -->
-      <div class="socials" role="navigation">
-        <a class="btn" href="https://www.linkedin.com/in/anchalsinghh" target="_blank">LinkedIn</a>
-        <a class="btn" href="https://github.com/anchalsingh1708" target="_blank">GitHub</a>
-        <a class="btn" href="https://youtube.com/@anchal_singh17" target="_blank">YouTube</a>
-        <a class="btn" href="https://www.instagram.com/the.outlier.zone" target="_blank">Instagram</a>
-      </div>
-    </div>
-  </section>
-
-  <main>
-
-    <div class="two-col">
-
-      <!-- LEFT COLUMN: About, Projects, Achievements -->
-      <div>
-
-        <!-- ABOUT -->
-        <section id="about" class="card">
-          <h2 class="section-title">About Me</h2>
-
-          <!-- Short professional summary (rewritten from resume) -->
-          <p class="lead">
-            I’m a Business Analyst working in Healthcare RCM with strong expertise in automation,
-            data engineering, and dashboarding. I build Python automation pipelines, SQL solutions,
-            and Power BI reports that reduce manual effort and provide operational insights for leadership.
-          </p>
-
-          <!-- Contact quick -->
-          <div style="margin-top:12px">
-            <div class="muted"><strong>Email:</strong> <a href="mailto:anchalsingh1708@gmail.com" style="color:var(--accent); text-decoration:none">anchalsingh1708@gmail.com</a></div>
-            <div class="muted"><strong>Location:</strong> Mumbai, India</div>
-            <div class="muted"><strong>Phone:</strong> <span style="opacity:.9">8104668813</span></div>
-          </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section id="projects" class="card">
-          <h2 class="section-title">Projects</h2>
-
-          <div class="projects-grid">
-            <div class="project">
-              <h4>Capacity Planning Automation</h4>
-              <p>Automated consolidation of staffing & productivity data using Python and Power Query, and built Power BI datasets for real-time visibility.</p>
-              <div class="muted" style="margin-top:8px"><strong>Tools:</strong> Python, SQL, Power BI, Excel</div>
-            </div>
-
-            <div class="project">
-              <h4>UID Matching & Modifier Validation</h4>
-              <p>Rule-based Python validation to detect E/M code and modifier mismatches, improving billing accuracy and reducing manual checks.</p>
-              <div class="muted" style="margin-top:8px"><strong>Tools:</strong> Python, Excel</div>
-            </div>
-
-            <div class="project">
-              <h4>CPA Call Center Performance Dashboard</h4>
-              <p>Interactive Power BI dashboard with KPIs, drill-downs, and SLA tracking to improve operational decision making.</p>
-              <div class="muted" style="margin-top:8px"><strong>Tools:</strong> Power BI, SQL</div>
-            </div>
-
-            <div class="project">
-              <h4>Healthcare Claim Validation App</h4>
-              <p>Desktop app built with CustomTkinter for CPT/MOD/ICD validation using insurance and NCCI logic to accelerate claim processing.</p>
-              <div class="muted" style="margin-top:8px"><strong>Tools:</strong> Python (CustomTkinter), Excel</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ACHIEVEMENTS -->
-        <section id="achievements" class="card">
-          <h2 class="section-title">Achievements</h2>
-          <ul>
-            <li>GeBBS Achievers Award — Recognized as Best Support Business Analyst for contributions in automation and process improvement.</li>
-            <li>Academic Excellence Award — Pillai College (BSc IT) for outstanding academic performance (CGPA: 9.77). </li>
-            <li>Delivered Power BI dashboards and automation solutions that saved 70–90% manual effort across processes.</li>
-          </ul>
-        </section>
-
-      </div>
-
-      <!-- RIGHT COLUMN: Resume summary + Skills + Certifications -->
-      <aside>
-
-        <!-- Resume snapshot (Education & Experience summary taken from the uploaded resume). -->
-        <section class="card">
-          <h2 class="section-title">Resume Snapshot</h2>
-
-          <h3 style="margin:6px 0 8px">Work Experience</h3>
-          <div class="muted">
-            <strong>Business Analyst — GeBBS Healthcare Solutions</strong><br>
-            <small>07/2024 – Present | Navi Mumbai</small>
-            <ul style="margin-top:8px">
-              <li>Engineered Python automation workflows and Power BI dashboards, reducing manual workload by 70–90% across RCM operations.</li>
-              <li>Built an automated Capacity Planning Tracker for real-time resource visibility.</li>
-              <li>Designed and optimized Power BI data models and automated report refresh & distribution.</li>
-              <li>Consolidated & transformed cross-source data using Python & Power Query for downstream analytics.</li>
-            </ul>
-          </div>
-
-          <div style="margin-top:12px" class="muted">
-            <strong>Data Analyst Intern — Ai Variant</strong><br>
-            <small>10/2023 – 01/2024</small>
-            <ul style="margin-top:8px">
-              <li>Formulated KPIs, optimized data processes by 20%, and developed reports & dashboards to communicate insights.</li>
-            </ul>
-          </div>
-
-          <!-- Education -->
-          <div style="margin-top:12px" class="muted">
-            <h3 style="margin:6px 0 8px">Education</h3>
-            <strong>BSc — Information Technology</strong><br>
-            Pillai College of Arts Commerce & Science — CGPA: 9.77 (05/2023)
-            <div style="margin-top:8px" class="muted">
-              HSC: 71% • SSC: 87%
-            </div>
-          </div>
-
-        </section>
-
-        <!-- Skills -->
-        <section id="skills" class="card">
-          <h2 class="section-title">Skills</h2>
-          <div>
-            <span class="skill-pill">Python (Pandas, NumPy, PySpark)</span>
-            <span class="skill-pill">SQL / T-SQL / PostgreSQL</span>
-            <span class="skill-pill">Power BI</span>
-            <span class="skill-pill">Excel (Advanced, Power Query)</span>
-            <span class="skill-pill">ETL & Data Modeling</span>
-            <span class="skill-pill">Automation & Reporting</span>
-          </div>
-
-          <h3 style="margin-top:14px; margin-bottom:8px">Certifications</h3>
-          <ul class="muted" style="margin-top:6px">
-            <li>Data Analyst — Excelr Solutions</li>
-            <li>SQL & Relational Databases 101 — IBM</li>
-            <li>Power BI Essential Training — LinkedIn</li>
-          </ul>
-        </section>
-
-      </aside>
-
-    </div> <!-- two-col -->
-
-    <!-- INTERESTS (full width) -->
-    <section id="interests" class="card" style="margin-top:18px">
-      <h2 class="section-title">Interests</h2>
-      <p class="lead">
-        • <strong>Content Creation</strong> — creating engaging reels about life, work, and data.<br>
-        • <strong>Marketing</strong> — exploring branding, storytelling and digital growth strategies.<br>
-        • <strong>Painting</strong> — acrylic and abstract art to recharge creativity.
-      </p>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="card">
-      <h2 class="section-title">Contact</h2>
-      <p class="lead">Open to Data Analyst / Business Analyst opportunities, collaborations, and content partnerships.</p>
-
-      <div style="text-align:center; margin-top:12px">
-        <a class="btn" href="mailto:anchalsingh1708@gmail.com">Email Me</a>
-        <a class="btn" href="https://www.linkedin.com/in/anchalsinghh" target="_blank">LinkedIn</a>
-        <a class="btn" href="https://github.com/anchalsingh1708" target="_blank">GitHub</a>
-        <a class="btn" href="https://youtube.com/@anchal_singh17" target="_blank">YouTube</a>
-        <a class="btn" href="https://www.instagram.com/the.outlier.zone" target="_blank">Instagram</a>
-      </div>
-
-      <div style="margin-top:16px" class="muted">
-        <strong>Location:</strong> Mumbai, India
-      </div>
-
-      <!-- download resume note: not publishing the PDF link automatically because you were concerned about privacy.
-           If you want a 'Request Resume' mail button instead, uncomment below or tell me and I will add it. -->
-      <div style="margin-top:12px" class="muted">
-        Want to share your resume privately? Use the email button above or ask me to add a 'Request Resume' button.
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    © 2025 Anchal Singh • Built for hiring managers & recruiters
-  </footer>
-
-  <!-- Resume source (uploaded file used to fill content) -->
-  <div style="display:none">Resume source: :contentReference[oaicite:1]{index=1}</div>
+<footer>© 2025 Anchal Singh</footer>
 
 </body>
 </html>
